@@ -1,0 +1,31 @@
+<div class="button-container">
+    <button (click)="open()" class="btn">Ajouter animal</button>
+  </div>
+  
+  <div *ngIf="openned" class="form-container">
+    <form (ngSubmit)="sendNewAnimal()">
+      <label for="nom">Name</label>
+      <input [(ngModel)]="newAnimal.name" id="nom" name="name" type="text">
+      
+      <label for="color">Color</label>
+      <input [(ngModel)]="newAnimal.color" id="color" name="color" type="text">
+      
+      <label for="sex">Choose sex</label>
+      <select [(ngModel)]="newAnimal.sex" name="sex" id="sex">
+        <option value="M">M</option>
+        <option value="F">F</option>
+      </select>
+      
+      <label for="species">Choose species</label>
+      <select [(ngModel)]="selectedSpecieIndex" name="species" id="species">
+        <option *ngFor="let spec of speciesList; let i = index" [value]="i">{{spec.commonName}}</option>
+      </select>
+  
+      <button type="submit" class="btn">Valider</button>
+    </form>
+  </div>
+  
+  <div *ngFor="let animal of animalList">
+    <app-animal-card [animal]="animal"></app-animal-card>
+  </div>
+  

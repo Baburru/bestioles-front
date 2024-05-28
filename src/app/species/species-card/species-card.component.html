@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-header">
+      <h2>{{ specie.commonName }}</h2>
+      <button *ngIf="specie.id" (click)="deleteSpecie(specie.id)">Delete</button>
+    </div>
+    <div class="card-body">
+      <p><strong>Latin name:</strong> {{ specie.latinName }}</p>
+    </div>
+  </div>
+  

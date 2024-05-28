@@ -1,0 +1,17 @@
+<!-- person-list.component.html -->
+<div class="person-list">
+    <div *ngFor="let person of personList" class="person-card">
+      <div class="person-info">
+        <h2>{{ person.firstName }} {{ person.lastName }}</h2>
+        <p><strong>Age:</strong> {{ person.age }}</p>
+      </div>
+      <div class="animals-list">
+        <div *ngFor="let animal of person.animals" class="animal-item">
+          <div class="animal-info">
+            <h3>{{ animal.name }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
